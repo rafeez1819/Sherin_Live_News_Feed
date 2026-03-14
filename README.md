@@ -3,42 +3,10 @@
 Sherin International Live Update - GitHub Repository
 Here's a complete GitHub repository structure for Sherin International's planet-scale intelligence system with real-time global news updates, predictive modeling, and satellite imagery integration.
 
-🔗 Repository URL: https://github.com/your-username/sherin-international
+🔗 Repository URL: (https://github.com/rafeez1819/Sherin_Live_News_Feed/)
 
-📁 Repository Structure (Table Format)
-Path	Type	Description	Key Files
-Root Directory			
-.github/	Directory	GitHub configurations	
-.github/workflows/	Directory	CI/CD pipelines	docker-build.yml, k8s-deploy.yml, tests.yml
-.github/ISSUE_TEMPLATE/	Directory	Issue templates	bug_report.md, feature_request.md
-backend/	Directory	Microservices & data pipeline	
-backend/discovery/	Directory	Source discovery engine	discoveryService.js, discoveryService.test.js
-backend/ingestion/	Directory	Data ingestion layer	feedCollector.js, feedCollector.test.js
-backend/processing/	Directory	Event detection & intelligence	eventProcessor.js (Flink job)
-backend/predictive/	Directory	Predictive modeling	train.py, inference.py
-backend/satellite/	Directory	Satellite imagery integration	nasa/api.py, esa/api.py
-backend/api/	Directory	REST/WebSocket API	websocketServer.js, restApi.js
-backend/storage/	Directory	Database schemas	schema.sql
-backend/config/	Directory	Environment configs	kafka.config, database.config
-frontend/	Directory	Geospatial intelligence map	
-frontend/public/	Directory	Static files	index.html, favicon.ico
-frontend/src/	Directory	React application	
-frontend/src/components/	Directory	React components	CountrySelector.js, EventDetails.js, AudioPlayer.js
-frontend/src/hooks/	Directory	Custom hooks	useMapEvents.js, useWebSocket.js
-frontend/src/services/	Directory	API clients	websocket.js, apiClient.js
-frontend/src/utils/	Directory	Helper functions	geoHelpers.js, countries.js
-frontend/src/	Directory	Main app files	App.js, index.js
-k8s/	Directory	Kubernetes manifests	
-k8s/base/	Directory	Shared Kubernetes configs	discovery.yaml, ingestion.yaml, api.yaml, frontend.yaml
-k8s/overlays/	Directory	Environment-specific configs	
-k8s/overlays/dev/	Directory	Development configs	kustomization.yaml
-k8s/overlays/prod/	Directory	Production configs	kustomization.yaml
-k8s/aws/	Directory	AWS-specific configs	ingress.yaml, storageclass.yaml
-terraform/	Directory	Infrastructure as Code	
-terraform/aws/	Directory	AWS EKS configuration	main.tf, variables.tf, outputs.tf
-terraform/gcp/	Directory	GCP GKE configuration	main.tf, variables.tf, outputs.tf
-scripts/	Directory	Utility scripts	init-db.js, create-topics.js, train-model.py
-docs/	Directory	Documentation	architecture.md, deployment.md, api.md
+📁 Repository Structure
+
 Root Files			
 .env.example	File	Environment variables template	
 docker-compose.yml	File	Local development setup	
