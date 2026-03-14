@@ -5,64 +5,88 @@ Here's a complete GitHub repository structure for Sherin International's planet-
 
 🔗 Repository URL: https://github.com/your-username/sherin-international
 
-📁 Repository Structure
-sherin-international/
-├── .github/                  # GitHub configurations
-│   ├── workflows/            # CI/CD pipelines
-│   │   ├── docker-build.yml
-│   │   ├── k8s-deploy.yml
-│   │   └── tests.yml
-│   └── ISSUE_TEMPLATE/       # Issue templates
-│       ├── bug_report.md
-│       └── feature_request.md
-│
-├── backend/                  # Microservices & data pipeline
-│   ├── discovery/            # Source discovery engine
-│   ├── ingestion/            # Data ingestion layer
-│   ├── processing/           # Event detection & intelligence
-│   ├── predictive/           # Predictive modeling
-│   ├── satellite/            # Satellite imagery integration
-│   ├── api/                  # REST/WebSocket API
-│   ├── storage/              # Database schemas
-│   └── config/               # Environment configs
-│
-├── frontend/                 # Geospatial intelligence map
-│   ├── public/               # Static files
-│   ├── src/
-│   │   ├── components/       # React components
-│   │   ├── hooks/            # Custom hooks
-│   │   ├── services/         # API clients
-│   │   ├── utils/            # Helpers
-│   │   ├── App.js            # Main app
-│   │   └── index.js          # Entry point
-│   └── package.json
-│
-├── k8s/                      # Kubernetes manifests
-│   ├── base/                 # Shared configs
-│   ├── overlays/             # Environment-specific configs
-│   │   ├── dev/
-│   │   └── prod/
-│   └── aws/                  # AWS-specific configs
-│
-├── terraform/                # Infrastructure as Code
-│   ├── aws/                  # AWS EKS
-│   └── gcp/                  # GCP GKE
-│
-├── scripts/                  # Utility scripts
-│   ├── init-db.js            # Database initialization
-│   ├── create-topics.js      # Kafka topic creation
-│   └── train-model.py        # Model training
-│
-├── docs/                     # Documentation
-│   ├── architecture.md       # System architecture
-│   ├── deployment.md         # Deployment guide
-│   ├── api.md                # API documentation
-│   └── monitoring.md         # Monitoring setup
-│
-├── .env.example              # Environment variables template
-├── docker-compose.yml        # Local development setup
-├── README.md                 # Main repository documentation
-└── LICENSE                   # License (MIT)
+📁 Repository Structure (Table Format)
+Path	Type	Description	Key Files
+Root Directory			
+.github/	Directory	GitHub configurations	
+.github/workflows/	Directory	CI/CD pipelines	docker-build.yml, k8s-deploy.yml, tests.yml
+.github/ISSUE_TEMPLATE/	Directory	Issue templates	bug_report.md, feature_request.md
+backend/	Directory	Microservices & data pipeline	
+backend/discovery/	Directory	Source discovery engine	discoveryService.js, discoveryService.test.js
+backend/ingestion/	Directory	Data ingestion layer	feedCollector.js, feedCollector.test.js
+backend/processing/	Directory	Event detection & intelligence	eventProcessor.js (Flink job)
+backend/predictive/	Directory	Predictive modeling	train.py, inference.py
+backend/satellite/	Directory	Satellite imagery integration	nasa/api.py, esa/api.py
+backend/api/	Directory	REST/WebSocket API	websocketServer.js, restApi.js
+backend/storage/	Directory	Database schemas	schema.sql
+backend/config/	Directory	Environment configs	kafka.config, database.config
+frontend/	Directory	Geospatial intelligence map	
+frontend/public/	Directory	Static files	index.html, favicon.ico
+frontend/src/	Directory	React application	
+frontend/src/components/	Directory	React components	CountrySelector.js, EventDetails.js, AudioPlayer.js
+frontend/src/hooks/	Directory	Custom hooks	useMapEvents.js, useWebSocket.js
+frontend/src/services/	Directory	API clients	websocket.js, apiClient.js
+frontend/src/utils/	Directory	Helper functions	geoHelpers.js, countries.js
+frontend/src/	Directory	Main app files	App.js, index.js
+k8s/	Directory	Kubernetes manifests	
+k8s/base/	Directory	Shared Kubernetes configs	discovery.yaml, ingestion.yaml, api.yaml, frontend.yaml
+k8s/overlays/	Directory	Environment-specific configs	
+k8s/overlays/dev/	Directory	Development configs	kustomization.yaml
+k8s/overlays/prod/	Directory	Production configs	kustomization.yaml
+k8s/aws/	Directory	AWS-specific configs	ingress.yaml, storageclass.yaml
+terraform/	Directory	Infrastructure as Code	
+terraform/aws/	Directory	AWS EKS configuration	main.tf, variables.tf, outputs.tf
+terraform/gcp/	Directory	GCP GKE configuration	main.tf, variables.tf, outputs.tf
+scripts/	Directory	Utility scripts	init-db.js, create-topics.js, train-model.py
+docs/	Directory	Documentation	architecture.md, deployment.md, api.md
+Root Files			
+.env.example	File	Environment variables template	
+docker-compose.yml	File	Local development setup	
+README.md	File	Main repository documentation	
+LICENSE	File	License file (MIT)	
+.gitignore	File	Git ignore rules	
+📂 Detailed Breakdown by Component
+1. Backend Components
+Component	Path	Description	Key Files
+Source Discovery	backend/discovery/	Self-expanding crawler for news sources	discoveryService.js, discoveryService.test.js
+Data Ingestion	backend/ingestion/	Multi-format news ingestion	feedCollector.js, feedCollector.test.js
+Event Processing	backend/processing/	Real-time event detection (Flink)	eventProcessor.java
+Predictive Modeling	backend/predictive/	Event escalation forecasting	train.py, inference.py
+Satellite Imagery	backend/satellite/	NASA/ESA integration	nasa/api.py, esa/api.py
+API Service	backend/api/	REST/WebSocket API	websocketServer.js, restApi.js
+Database	backend/storage/	PostgreSQL schemas	schema.sql
+2. Frontend Components
+Component	Path	Description	Key Files
+Main App	frontend/src/	React application entry point	App.js, index.js
+Components	frontend/src/components/	Reusable UI components	CountrySelector.js, EventDetails.js, AudioPlayer.js
+Hooks	frontend/src/hooks/	Custom React hooks	useMapEvents.js, useWebSocket.js
+Services	frontend/src/services/	API clients	websocket.js, apiClient.js
+Utilities	frontend/src/utils/	Helper functions	geoHelpers.js, countries.js
+3. Infrastructure Components
+Component	Path	Description	Key Files
+Kubernetes	k8s/	Kubernetes manifests	discovery.yaml, ingestion.yaml, api.yaml
+Terraform (AWS)	terraform/aws/	AWS EKS infrastructure	main.tf, variables.tf
+Terraform (GCP)	terraform/gcp/	GCP GKE infrastructure	main.tf, variables.tf
+Docker	Root	Local development	docker-compose.yml
+4. CI/CD & DevOps
+Component	Path	Description	Key Files
+GitHub Actions	.github/workflows/	CI/CD pipelines	docker-build.yml, k8s-deploy.yml
+Scripts	scripts/	Utility scripts	init-db.js, create-topics.js
+5. Documentation
+Component	Path	Description	Key Files
+Architecture	docs/architecture.md	System architecture	
+Deployment	docs/deployment.md	Deployment guide	
+API Docs	docs/api.md	API documentation	
+Monitoring	docs/monitoring.md	Monitoring setup	
+📌 Key Features by Path
+Feature	Implementation Path	Description
+Real-Time Updates	backend/api/websocketServer.js	WebSocket for live news updates
+Geospatial Map	frontend/src/App.js	Deck.gl + Mapbox visualization
+Predictive Modeling	backend/predictive/	Event escalation forecasting
+Satellite Imagery	backend/satellite/	NASA/ESA API integration
+Multi-Cloud Deployment	terraform/aws/ & terraform/gcp/	AWS EKS + GCP GKE
+CI/CD Pipeline	.github/workflows/	GitHub Actions automation
+Monitoring	k8s/base/monitoring.yaml	Prometheus + Grafana
 📄 GitHub Repository Files
 1. README.md (Main Documentation)
 # Sherin International - Live Global Intelligence System
