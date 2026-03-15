@@ -1,4 +1,5 @@
-#SHERIN_LIVE_NEWS_FEED
+# SHERIN_LIVE_NEWS_FEED
+https://sherin.tech/news/
 
 Here's a **complete implementation plan** for the **Sherin International News Portal** (`sherin.tech/news`), including frontend, backend, and deployment architecture:
 
